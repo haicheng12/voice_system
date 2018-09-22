@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+  <master auto="start"/>
+  <param name="use_sim_time" value="false" />
+
+  <node name="xf_tts" pkg="voice_system" type="xf_tts" output="screen"/>
+
+  <node name="tuling_nlu" pkg="voice_system" type="tuling_nlu" output="screen"/>
+
+</launch>
