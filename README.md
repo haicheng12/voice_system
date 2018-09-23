@@ -7,4 +7,15 @@ We should install this application in order to play the .wav file.
 sudo apt-get install sox
 ```
 
-Then we should register an account in www.tuling123.com
+Then we should register an tuling account in www.tuling123.com
+
+To launch the file,we start three nodes by using this command:
+```
+roslaunch voice_system voice.launch
+```
+
+Next,we should issue an order by:
+```
+rostopic pub -1 /voice/xf_asr_topic std_msgs/Int32 1
+```
+Finally,we can say something to the computer,and it will answer your question.
