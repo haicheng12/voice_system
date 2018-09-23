@@ -8,4 +8,7 @@
 
   <node name="tuling_nlu" pkg="voice_system" type="tuling_nlu" output="screen"/>
 
+  <node name="xf_asr" pkg="voice_system" type="xf_asr" output="screen"/>
+
+
 </launch>

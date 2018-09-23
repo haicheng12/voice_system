@@ -203,3 +203,5 @@ target_link_libraries(xf_tts ${catkin_LIBRARIES} -lmsc -lrt -ldl -lpthread)
 add_executable(tuling_nlu src/tuling_nlu.cpp)
 target_link_libraries(tuling_nlu ${catkin_LIBRARIES} -ljsoncpp -lcurl)
 
+add_executable(xf_asr src/xf_asr.cpp src/linuxrec.cpp src/speech_recognizer.cpp)
+target_link_libraries(xf_asr ${catkin_LIBRARIES} -lmsc -lrt -ldl -lpthread -lasound)

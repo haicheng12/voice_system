@@ -1,10 +1,4 @@
-﻿/*
-* 语音合成（Text To Speech，TTS）技术能够自动将任意文字实时转换为连续的
-* 自然语音，是一种能够在任何时间、任何地点，向任何人提供语音信息服务的
-* 高效便捷手段，非常符合信息时代海量数据、动态更新和个性化查询的需求。
-*/
-
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -138,18 +132,12 @@ int text_to_speech(const char* src_text, const char* des_path, const char* param
 	return ret;
 }
 
-/*
-* make topic callback text to wav file
-*/
-
 void makeTextToWav(const char* text, const char* filename)
 {
 	int         ret                  = MSP_SUCCESS;
 	const char* login_params         = "appid = 5b8c4952, work_dir = .";//登录参数,appid与msc库绑定,请勿随意改动
 
-    const char* session_begin_params = "voice_name = vinn, text_encoding = utf8, sample_rate = 16000, speed = 50, volume = 50, pitch = 50, rdn = 0";
-//	const char* filename             = "test.wav"; //合成的语音文件名称
-//	const char* text                 = "欧尼酱，我和显卡只能选一个哦"; //合成文本
+    const char* session_begin_params = "voice_name = xiaomeng, text_encoding = utf8, sample_rate = 16000, speed = 50, volume = 50, pitch = 50, rdn = 0";
 
 	/* 用户登录 */
 	ret = MSPLogin(NULL, NULL, login_params);//第一个参数是用户名，第二个参数是密码，第三个参数是登录参数，用户名和密码可在http://www.xfyun.cn注册获取
@@ -172,13 +160,11 @@ void makeTextToWav(const char* text, const char* filename)
     MSPLogout();
 }
 
-//play compose wav file
 void playWav()
 {
         system(playPath);
 }
 
-//topic auto invoke,make text to wav file, then play wav file
 void topicCallBack(const std_msgs::String::ConstPtr& msg)
 {
         std::cout << "get topic test:"<< msg->data.c_str();
@@ -200,4 +186,3 @@ int main(int argc, char* argv[])
 
         return 0;
 }
-
