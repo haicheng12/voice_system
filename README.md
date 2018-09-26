@@ -8,6 +8,10 @@ sudo apt-get install sox
 sudo apt-get install libjsoncpp1 libjsoncpp-dev
 sudo apt-get install libcurl3 libcurl4-openssl-dev
 ```
+Importantly,we must copy the libmsc.so file to /usr/lib:
+```
+sudo cp libmsc.so /usr/lib
+```
 
 Then we should register an tuling account in www.tuling123.com
 
